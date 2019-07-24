@@ -7,18 +7,20 @@
   <body>
     <h1 id="myClock">Clock</h1>
     <script>
-      const myClockSelector = document.querySelector('#myClock');
+      var myClockSelector = document.getElementById('myClock');
       
       function setDate() {
-          const now = new Date();
-          const seconds = now.getSeconds();
-          const minutes = now.getMinutes();
-          const hours = now.getHours();
+          var now = new Date();
+          var seconds = now.getSeconds();
+          var minutes = now.getMinutes();
+          var hours = now.getHours();
           
-          myClockSelector.setAttribute("innerHtml", hours + ":" + minutes + ":" + seconds);
+          myClockSelector.innerHTML = hours + ":" + minutes + ":" + seconds;
       }
       
-      setInterval(setDate, 1000);
+      setInterval(function () {
+    setDate();
+}, 1000);
     </script>
   </body>
 </html>
