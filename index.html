@@ -5,6 +5,20 @@
     <title>title</title>
   </head>
   <body>
-  
+    <h1 id="myClock">Clock</h1>
+    <script>
+      const myClockSelector = document.querySelector('#myClock');
+      
+      function setDate() {
+          const now = new Date();
+          const seconds = now.getSeconds();
+          const minutes = now.getMinutes();
+          const hours = now.getHours();
+          
+          myClockSelector.setAttribute("innerHtml", hours + ":" + minutes + ":" + seconds);
+      }
+      
+      setInterval(setDate, 1000);
+    </script>
   </body>
 </html>
